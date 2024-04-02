@@ -1,13 +1,24 @@
 import { Module } from '@nestjs/common';
-import { SomeController } from './some/controller/some.controller';
-import { SomeService } from './some/service/some.service';
 import { AppController } from './app.controller';
-import { UsersModule } from './users/users.module';
-
+import { SomeModule } from './some/some.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Some } from './some/entities/some.entity';
+import { GraphQLModule } from '@nestjs/graphql';
 // 应用程序的根模块。
 @Module({
-  imports: [UsersModule],
-  controllers: [AppController, SomeController],
-  providers: [SomeService],
+  imports: [
+    GraphQLModule.forRoot({
+      debug: false,
+      playground: false,
+      include: [SomeModule],
+    }),
+    TypeOrmModule.forRoot({
+      entities: [Some],
+      synchronize: true,
+    }),
+    SomeModule,
+  ],
+  controllers: [AppController],
+  providers: [],
 })
 export class AppModule {}
