@@ -1,7 +1,7 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 
 @ObjectType()
-export class SomeDetailsOutput {
+export class SomeOutput {
   @Field(() => Int)
   id: number;
 
@@ -15,13 +15,13 @@ export class SomeDetailsOutput {
   createTime: Date; // 创建时间
 
   @Field()
+  deleteTime: Date | undefined; // 删除时间
+
+  @Field()
   isDelete: boolean; // 是否删除标志
 
   @Field()
   isOk: boolean; // 是否完成
-
-  @Field()
-  deleteTime: Date; // 删除时间
 
   // 可以选择性地暴露部分实体属性，也可以添加额外的计算属性等
 }

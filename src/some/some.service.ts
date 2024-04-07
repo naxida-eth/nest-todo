@@ -37,7 +37,7 @@ export class SomeService {
     return this.somesRepository.update({ id }, { ...updateSomeInput });
   }
 
-  remove(id: Some['id']) {
+  delete(id: Some['id']) {
     return this.somesRepository.update({ id }, { isDelete: true });
   }
 }
