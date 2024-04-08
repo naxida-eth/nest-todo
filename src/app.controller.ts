@@ -4,9 +4,6 @@ import { Controller, Get, Res } from '@nestjs/common';
 export class AppController {
   @Get()
   index(@Res() res) {
-    console.log({
-      key: 'redirect',
-    });
-    res.status(302).redirect('/some');
+    res.status(302).redirect('/graphql');
   }
 }
