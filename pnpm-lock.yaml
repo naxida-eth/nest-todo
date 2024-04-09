@@ -35,9 +35,18 @@ dependencies:
   '@nestjs/typeorm':
     specifier: ^10.0.2
     version: 10.0.2(@nestjs/common@10.3.7)(@nestjs/core@10.3.7)(reflect-metadata@0.2.2)(rxjs@7.8.1)(typeorm@0.3.20)
+  '@types/cors':
+    specifier: ^2.8.17
+    version: 2.8.17
   apollo-server-express:
     specifier: 2.x.x
     version: 2.26.2(graphql@16.8.1)
+  cors:
+    specifier: ^2.8.5
+    version: 2.8.5
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
@@ -1821,6 +1830,12 @@ packages:
 
   /@types/cors@2.8.10:
     resolution: {integrity: sha512-C7srjHiVG3Ey1nR6d511dtDkCEjxuN9W1HWAEjGq8kpcwmNM6JJkpC0xvabM7BXTG2wDq8Eu33iH9aQKa7IvLQ==}
+    dev: false
+
+  /@types/cors@2.8.17:
+    resolution: {integrity: sha512-8CGDvrBj1zgo2qE+oS3pOCyYNqCPryMWY2bGfwA0dcfopWGgxs+78df0Rs3rc9THP4JkOhLsAa+15VdpAqkcUA==}
+    dependencies:
+      '@types/node': 20.12.2
     dev: false
 
   /@types/eslint-scope@3.7.7:

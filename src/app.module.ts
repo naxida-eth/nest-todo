@@ -6,7 +6,9 @@ import { Some } from './some/entities/some.entity';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import { ConfigModule } from '@nestjs/config';
+// app.module.ts
 
+// ...
 // app.module.ts
 // 应用程序的根模块。
 @Module({
@@ -18,11 +20,11 @@ import { ConfigModule } from '@nestjs/config';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
-      port: Number(process.env.DB_PORT),
-      username: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      host: process.env.NEXT_PUBLIC_DB_HOST,
+      port: Number(process.env.NEXT_PUBLIC_DB_PORT),
+      username: process.env.NEXT_PUBLIC_DB_USER,
+      password: process.env.NEXT_PUBLIC_DB_PASSWORD,
+      database: process.env.NEXT_PUBLIC_DB_NAME,
       entities: [Some],
       synchronize: true,
     }),
